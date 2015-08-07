@@ -1,84 +1,446 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <html>
 <head>
   <meta charset="UTF-8">
   <title>404 Not Found</title>
 
-  <!-- TypeKit -->
-  <script src="//use.typekit.net/awt5vfk.js"></script>
-  <script>try{Typekit.load();}catch(e){}</script>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
 
-  <style>
-
+  <style type="text/css">
+        
+    /* Reset */
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    /* Site wide */
+    * {
+      font-family: 'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-style: normal;
+      font-weight: lighter;
+    }
+    html {
+      margin: 0;  
+      height: 100%;
+      width: 100%;
+    }
     body {
+      height: 100%;
+      width: 100%;
+/*      overflow: hidden;*/
       margin: 0; 
-      font-family: 'source-sans-pro',Helvetica Neue,Helvetica,Arial,sans-serif; 
+      /*font-family: 'source-sans-pro', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+      font-weight: 100;
       color: white; 
       background-image: url(https://s3-us-west-2.amazonaws.com/cdn.thegrid.io/assets/images/gridbear.jpg); 
       background-size: cover; 
       background-repeat: no-repeat; 
       background-position: center;
     }
-    section {
-      width: 100%; 
-      height: 100%; 
-      overflow: hidden; 
-      background-color: rgba(31, 30, 29, .9);
-    }
-    .text-column {
-      max-width: 648px; top: 16%; margin: 2rem; padding: 2rem;
+
+    /* thegrid.io link */
+    a {
+      color: #ffffff;
+      letter-spacing: .04rem;
+      color: rgba(26,178,255,.9); 
     }
 
-    h1 {
-      font-size: 14rem; 
-      line-height: 12rem; 
-      letter-spacing: .1rem; 
-      font-weight: 100; 
+    p {
+      font-size: 1.4rem;
+      color: #ffffff;
+      letter-spacing: .08rem;
+      font-weight: lighter;
+      line-height: 2rem;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    a, p {
+      margin-left: .2rem;
+      text-decoration: none;
+    }
+
+    /* Current status */
+    
+    h1, h2 {
       margin: 0; 
-      font-size: 14rem; 
-      line-height: 12rem;
+      font-weight: 100;
+      letter-spacing: .1rem; 
 
     }
 
+/*    h1 {
+      font-size: 8.5rem; 
+      line-height: 8rem; 
+    }
     h2 {
       font-size: 1.5rem; 
       line-height: 2.2rem; 
-      letter-spacing: .1rem; 
-      font-weight: 100;
-    }
+    }*/
+
+/*    p {
+      margin: 0;
+      padding-top: 4rem;
+    }*/
 
     a {
       text-decoration: none; 
-      color: hsl(42, 84%, 69%);
+      /*color: hsl(42, 84%, 69%);*/
+      color: rgb(242,231,109);
+      opacity: .8;
+    }
+
+
+
+
+
+    h1 {
+      /*color: #ffffff;*/
+      font-size: 5rem;
+      /*font-weight: 100;*/
+      line-height: 5rem;
+      margin-top: 1rem;
+      width: 95%;
+    }
+
+    h2 {
+/*      color: #ffffff;*/
+      font-size: 3.4rem;
+      /*font-weight: 100;*/
+      line-height: 4.4rem;
+      letter-spacing: .2rem;
+      margin-top: 1rem;
+      /*width: 95%;*/
+    }
+
+    h4{
+      color: #FEF597;
+      font-weight: 500;
+      margin-top: 3rem;
+      letter-spacing: .04rem;
+      line-height: 1.4rem;
+    }
+
+    h6{
+      font-size: .7rem;
+      letter-spacing: .15rem;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      font-weight: 500;
+    }
+
+    .logo{
+      fill:rgb(242,231,109);
+      width: 2rem;
+      height: 2rem;
+      margin-bottom: 2rem;
+      border: none;
+    }
+
+    .content{
+      width: 960px;
+      height: 100%;
+      z-index: 2;
+      /*overflow: hidden;*/
+      left: 0;
+      top: 0;
+      box-sizing: border-box;
+      position: absolute;
+      padding: 10%;
+      /*background-color: rgba(31, 30, 29, .9);*/
+    }
+    .background{
+      position: fixed;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #222;
+      background-color: rgba(31, 30, 29, .9);
+      background-size: cover;
+      z-index: 1;
+    }
+    .footer-links {
+      margin-top: 2rem;
+      position: relative;
+      display: inline-block;
+      border-bottom: 2px solid rgba(26,178,255,.9);
+      width: auto;
+      margin-right: 1rem;
+    }
+
+    #activeUsers-text {
+      margin-top: .8rem;
+    }
+    #url {
+      opacity: .8;
     }
     
-    /* Phones */
-    @media (min-width: 400px) {
-      h1 {
-        font-size: 8rem;
+    a:hover {
+      opacity: 1;
+    }
+    a:active {
+      opacity: 1;
+    }
+
+    .footer.left {
+      width: 42%;
+      float: left;
+      padding-right: 36px;
+    }
+    .footer.right {
+      right: 0;
+      /*float: right;*/
+    }
+    
+
+/*    @media screen and (min-width: 1281px) {
+
+      h2 {
+        font-size: 6rem !important;
+        line-height: 7rem !important;
+        width: 80%;
+      }
+      p {
+        width: 80%;
+      }
+      .content{
+        padding: 10% 32% 10% 12%;
+      }
+    }*/
+
+    /* IPAD and above*/
+
+    @media screen and (min-width: 961px) {
+      html{
+        font-size: 20px;
+      }
+      h1{
+        font-size: 5rem;
+        line-height: 5rem;
+        /*width: 80%;*/
       }
       h2 {
-        font-size: 3rem;
-        line-height: 4rem;
-        padding-top: 5rem;
+        font-size: 5rem;
+        line-height: 6rem;
+      }
+      h6 {
+        font-size: 1rem;
+      }
+      p {
+        font-size: 1.25rem;
+        letter-spacing: .02rem;
+        font-weight: lighter;
+        line-height: 1.75rem;
+        /*width: 72%;*/
+        /*color: rgba(255,255,255,.6);*/
+        /*margin-top: 1.4rem;*/
+      }
+      .content{
+        padding: 10%;
+      }
+      .footer.left {
+        padding-right: 40px;
       }
     }
-    @media (min-width: 700px) {
-       h1 {
-        font-size: 5.5rem; 
-        line-height: 5.2rem; 
+
+    /* IPAD and above*/
+
+    /*@media screen and (min-width: 768px) {
+      h1{
+        font-size: 9rem;
+        line-height: 9rem;
+      }
+    }*/
+
+    /* TABLETS */
+
+    /*@media only screen 
+      and (min-device-width: 960px) 
+      and (max-device-width: 1024px) 
+      and (-webkit-min-device-pixel-ratio: 1) { 
+        h1 {
+          font-size: 8rem;
+          line-height: 8rem;
+        }
+        p {
+          font-size: 2rem;
+          line-height: 2rem;
+          padding-top: 2rem;
+          width: 60%;
+        }
+        .content {
+          padding: 6%;
+          width: 86%;
+        }
+        .footer-left {
+          width: 80%;
+          float: none;
+        }
+        .footer-right {
+          right: 0;
+        }
+        
     }
-  </style>
+*/
+  
+  @media screen 
+    and (device-width: 601px) 
+    and (device-height: 906px) 
+    and (-webkit-min-device-pixel-ratio: 1.331) 
+    and (-webkit-max-device-pixel-ratio: 1.332) {
+      h1 {
+        font-size: 5rem;
+        line-height: 5rem;
+        width: 80%
+      }
+      p {
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        padding-top: 2rem;
+        width: 60%;
+      }
+      .content {
+        padding: 4%;
+        width: 80%;
+      }
+  }
+
+
+    @media only screen 
+      and (min-device-width: 568px) 
+      and (max-device-width: 959px) 
+      and (-webkit-min-device-pixel-ratio: 1) { 
+        h1 {
+          font-size: 6rem;
+          line-height: 6rem;
+          width: 80%
+        }
+        p {
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          padding-top: 2rem;
+          width: 60%;
+        }
+        .content {
+          padding: 4%;
+          width: 80%;
+        }
+        .footer.left {
+          width: 84%;
+          float: none;
+        }
+        .footer.right {
+          right: 0;
+        }
+        
+    }
+
+    /* PHONES */
+
+    @media only screen 
+      and (min-device-width: 320px) 
+      and (max-device-width: 567px) 
+      and (-webkit-min-device-pixel-ratio: 2) { 
+        h1 {
+          font-size: 8rem;
+          line-height: 8rem;
+        }
+        p {
+          font-size: 2.4rem;
+          line-height: 2.8rem;
+          padding-top: 2rem;
+          width: 82%;
+        }
+        .content {
+          padding: 6%;
+          width: 100%;
+        }
+        .footer.left {
+          width: 80%;
+          float: none;
+        }
+        .footer.right {
+          right: 0;
+        }
+        .logo{
+          width: 3rem;
+          height: 3rem;
+        
+    }
+
+    /* IPHONE 5 and below*/
+
+/*    @media screen and (min-width: 320px) {
+      html{
+        font-size: 20px;
+      }
+      h1{
+        font-size: 4.6rem;
+        line-height: 4.4rem;
+      }
+      h2{
+        font-size: 2.7rem;
+        line-height: 3.8rem;
+        margin-top: -.2rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+
+      .content{
+        padding: 2%;
+        width: 100%;
+      }
+    }*/
+
+/*    @media screen and (max-height: 778px) {
+      html{
+        font-size: 16px;
+      }
+    }*/
+
+</style>
   
 </head>
 
 <body>
-  <section>
-    <div class="text-column">
-      <h1>I'm beary sorry about this.</h1>
-      <h2>This isn't a page, yet.<br>But it could be yours if you claim the address at <a href="https://thegrid.io/">thegrid.io</a></h2>
+
+  <div class="background">
+    
+  </div>
+
+  <div class="content">
+    <a href="http://thegrid.io">
+      <svg version="1.1" class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 46 46" enable-background="new 0 0 46 46" xml:space="preserve">
+    <polygon points="46,46 0,46 0,0 46,0 46,2 2,2 2,44 44,44 44,13 13,13 13,33 33,33 33,24 22,24 22,22 35,22 35,35 11,35 11,11 46,11"></polygon>
+      </svg>
+    </a>
+    <div class="">
+      <h1 id="foundingMembers" class="odometer">Grid Bear can't find your page.</h1>
     </div>
-  </section>
+    <p>"<span id="url"></span>" isn't a website yet, but it could be once you claim it at <a href="https://thegrid.io/" target="_blank">thegrid.io</a></p>
+
+      <div class="footer left">
+        <p>Email <a href="mailto:support@thegrid.io?subject=Hey there, I could really use some help...">support@thegrid.io</a></p>
+      </div>
+      <div class="footer right">
+        <p>Twitter <a href="https://twitter.com/intent/tweet?screen_name=thegrid" target="_blank">@thegrid</a></p>
+      </div>
+  </div>
+
+  
+
+  <script>
+    var newURL = window.location.host + window.location.pathname;
+    document.getElementById('url').innerHTML = newURL;
+    // console.log(newURL);
+
+
+    
+  </script>
 
 </body>
 </html>
